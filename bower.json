@@ -1,0 +1,21 @@
+{
+  "name": "AN",
+  "authors": [
+    "Jeevan HR <jeevanhr7@gmail.com>"
+  ],
+  "description": "Plase Work Hard",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9",
+    "angular-ui-router": "~0.2.17"
+  }
+}

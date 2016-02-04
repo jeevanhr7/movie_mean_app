@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes/home/index.js"></script>
+    <script src="app/routes/home/Homecontroller.js"></script>
+    <script src="app/factories/HomeFactory.js"></script>
+    <title></title>
+</head>
+<body ng-app="mainApp">
+<div class="page">
+    <ui-view></ui-view>
+</div>
+
+<script type="text/ng-template" id="/home.html">
+    {{dotmappers}}
+    <!--<div ng-repeat="det1 in detail">-->
+        <!--{{det1.title}}-->
+        <!--{{det1.Class}}-->
+    <!--</div>-->
+    <h1>Details</h1>
+    <!--{{details}}-->
+    <li style="list-style:none"><h2>Poster:</h2> <img src="{{details.Poster}}" style="width: 150px;height: 150px"></li>
+
+        <div class="main" style="position: relative;top: -255px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="input-group col-md-12">
+                            <input type="text" ng-model="search" ng-model-options="{debounce:800}"
+                                   class="search-query form-control" placeholder="Search for the Movies"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                        </div>
+                        <div id="addMoviepanel">
+                            <h2>ADD MOVIE</h2>
+                            <form role="form">
+
+                                <div class="form-group">
+                                    <label for="Title">Title:</label>
+                                    <input type="text" id="Title" class="form-control" ng-model="details.Title"
+                                           placeholder="Title"/><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Poster">Poster Image:</label>
+                                    <input type="text" id="Poster" class="form-control" ng-model="details.Poster"
+                                           placeholder="Poster"/><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ReleasedDate"> Released On:</label>
+                                    <input type="text" id="ReleasedDate" class="form-control"
+                                           ng-model="details.Released"
+                                           placeholder="ReleasedDate"/><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Actors"> Actors:</label>
+                                    <input type="text" class="form-control" id="Actors" ng-model="details.Actors"
+                                           placeholder="Actors"/><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Director"> Director:</label>
+                                    <input type="text" class="form-control" id="Director" ng-model="details.Director"
+                                           placeholder="Director"/><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="MovieType"> MovieType:</label>
+                                    <input type="text" class="form-control" id="MovieType" ng-model="details.Genre"
+                                           placeholder="Movietype"/><br>
+                                </div>
+                                <input type="button" class="btn btn-default" ng-click="reset()" value="Reset"/>
+                                <input type="submit" class="btn btn-default" ng-click="update(details)" value="Save"/>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--<pre>Movies = {{movies | json}}</pre>-->
+            <pre>{{message}}</pre>
+        </div>
+</script>
+</body>
+</html>
