@@ -11,7 +11,7 @@ app.controller('HomeCtrl', ['$scope', '$http', 'HomeFactory', function ($scope, 
     $scope.search = "Dil Chahta Hai";
     function fetch() {
 
-        $http.get("http://www.omdbapi.com/?t=" + $scope.search)
+        $http.get("https://www.omdbapi.com/?t=" + $scope.search)
             .then(function (response) {
                 $scope.details = response.data;
             });
