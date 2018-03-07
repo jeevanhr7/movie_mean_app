@@ -4,6 +4,8 @@ WORKDIR /app
 
 # Install Mean.JS Prerequisites
 RUN npm install -g bower
+RUN npm install -g pm2
+
 
 # Install Mean.JS packages
 COPY package.json /app
@@ -22,5 +24,5 @@ ENV NODE_ENV production
 # Port 3000 for server
 # Port 35729 for livereload
 EXPOSE 3000 35729
-CMD node server/app.js
+CMD pm2 start node server/app.js
 
